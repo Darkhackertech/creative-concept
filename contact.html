@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Creative Concept</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4fcff;
+            color: #173f55;
+        }
+
+
+        /* =========================
+   HEADER
+========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            background: rgba(255, 255, 255, .97);
+
+            z-index: 1000;
+
+            box-shadow:
+                0 3px 18px rgba(0, 140, 200, .12);
+        }
+
+        .navbar {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 15px 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(135deg,
+                    #00aef0,
+                    #75ddff);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 21px;
+        }
+
+        .logo h2 {
+            color: #009bd7;
+
+            font-size: 20px;
+        }
+
+        .logo span {
+            display: block;
+
+            color: #718894;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+
+            gap: 23px;
+        }
+
+        nav a {
+            text-decoration: none;
+
+            color: #23465a;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00aef0;
+        }
+
+
+        /* =========================
+   HERO
+========================= */
+
+        .contact-hero {
+
+            padding: 160px 25px 80px;
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(circle at 10% 20%,
+                    #b6efff,
+                    transparent 28%),
+
+                linear-gradient(135deg,
+                    #e5faff,
+                    white);
+        }
+
+        .contact-hero small {
+
+            color: #00aef0;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+        }
+
+        .contact-hero h1 {
+
+            margin: 15px 0;
+
+            font-size:
+                clamp(40px, 6vw, 65px);
+
+            color: #123d54;
+        }
+
+        .contact-hero h1 span {
+
+            color: #00aef0;
+        }
+
+        .contact-hero p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #647f8c;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+   CONTACT SECTION
+========================= */
+
+        .contact-section {
+
+            padding: 85px 25px;
+
+            background: white;
+        }
+
+        .contact-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                .8fr 1.2fr;
+
+            gap: 40px;
+        }
+
+
+        /* =========================
+   CONTACT INFO
+========================= */
+
+        .contact-info {
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            background:
+
+                linear-gradient(145deg,
+                    #00aef0,
+                    #72dcff);
+
+            color: white;
+
+            box-shadow:
+                0 20px 40px rgba(0, 174, 240, .2);
+        }
+
+        .contact-info h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-info>p {
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+
+            opacity: .95;
+        }
+
+        .info-item {
+
+            display: flex;
+
+            gap: 15px;
+
+            align-items: flex-start;
+
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            flex-shrink: 0;
+
+            border-radius: 13px;
+
+            background: white;
+
+            color: #009bd7;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+        .info-item h3 {
+
+            font-size: 15px;
+
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+
+            font-size: 13px;
+
+            opacity: .9;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+   WHATSAPP
+========================= */
+
+        .whatsapp-btn {
+
+            display: block;
+
+            margin-top: 30px;
+
+            padding: 14px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            background: white;
+
+            color: #008fc9;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .whatsapp-btn:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+        /* =========================
+   FORM
+========================= */
+
+        .contact-form {
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            background: #f4fcff;
+
+            border: 1px solid #d9f4ff;
+
+            box-shadow:
+                0 10px 30px rgba(0, 150, 210, .08);
+        }
+
+        .contact-form h2 {
+
+            color: #153e53;
+
+            margin-bottom: 8px;
+
+            font-size: 28px;
+        }
+
+        .contact-form>p {
+
+            color: #718691;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .input-group {
+
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+
+            display: block;
+
+            color: #365b6c;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+
+            width: 100%;
+
+            border: 1px solid #cfeaf3;
+
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 13px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            color: #23465a;
+
+            transition: .3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+
+            border-color: #00aef0;
+
+            box-shadow:
+                0 0 0 3px rgba(0, 174, 240, .08);
+        }
+
+        .input-group textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+
+        /* =========================
+   SUBMIT BUTTON
+========================= */
+
+        .submit-btn {
+
+            width: 100%;
+
+            border: none;
+
+            padding: 15px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(135deg,
+                    #00aef0,
+                    #008fd0);
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px rgba(0, 174, 240, .2);
+
+            transition: .3s;
+        }
+
+        .submit-btn:hover {
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+   SUCCESS MESSAGE
+========================= */
+
+        .success-message {
+
+            display: none;
+
+            margin-top: 18px;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            background: #e2f9ef;
+
+            color: #168052;
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+   CTA
+========================= */
+
+        .cta {
+
+            max-width: 1050px;
+
+            margin: 70px auto;
+
+            padding: 60px 25px;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(135deg,
+                    #00aef0,
+                    #73dcff);
+
+            color: white;
+        }
+
+        .cta h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+
+            margin-bottom: 25px;
+        }
+
+        .cta a {
+
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            background: white;
+
+            color: #008fc9;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+   FOOTER
+========================= */
+
+        footer {
+
+            background: #07384e;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+
+            color: #7ce0ff;
+
+            margin-bottom: 8px;
+        }
+
+        footer p {
+
+            color: #b8d4df;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+   MOBILE
+========================= */
+
+        @media(max-width:800px) {
+
+            .navbar {
+                padding: 12px 15px;
+            }
+
+            nav {
+                gap: 9px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .contact-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .contact-hero {
+
+                padding-top: 135px;
+
+            }
+
+            .contact-hero h1 {
+
+                font-size: 42px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+     HEADER
+========================= -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    ✂
+                </div>
+
+                <div>
+
+                    <h2>Creative Concept</h2>
+
+                    <span>
+                        TAILORING & FASHION
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="design.html">
+                    Designs
+                </a>
+
+                <a href="service.html">
+                    Services
+                </a>
+
+                <a href="gallery.html">
+                    Gallery
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html" class="active">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+     HERO
+========================= -->
+
+    <section class="contact-hero">
+
+        <small>
+            ✦ LET'S CREATE TOGETHER
+        </small>
+
+        <h1>
+            Contact <span>Us</span>
+        </h1>
+
+        <p>
+            Have a fashion idea, need a custom outfit,
+            or want to ask about our services?
+            We would love to hear from you.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+     CONTACT
+========================= -->
+
+    <section class="contact-section">
+
+        <div class="contact-container">
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="contact-info">
+
+                <h2>
+                    Let's Talk Fashion
+                </h2>
+
+                <p>
+                    Tell us what you have in mind and
+                    let's start creating something special.
+                </p>
+
+
+                <div class="info-item">
+
+                    <div class="info-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Phone
+                        </h3>
+
+                        <p>
+                            +234 705 795 3819
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-icon">
+                        💬
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            WhatsApp
+                        </h3>
+
+                        <p>
+                            Available for fashion enquiries
+                            and appointments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Location
+                        </h3>
+
+                        <p>
+                            RAB ROAD, RELELE CHALLENGE AREA, OPP. TOBI HOSPITAL, IBADAN
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-icon">
+                        🕐
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Opening Hours
+                        </h3>
+
+                        <p>
+                            Monday – Saturday<br>
+                            9:00 AM – 6:00 PM
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a href="https://wa.me/2347057953819" class="whatsapp-btn" target="_blank">
+                    💬 Chat With Us On WhatsApp
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form">
+
+                <h2>
+                    Book An Appointment
+                </h2>
+
+                <p>
+                    Send us your details and tell us what
+                    you would like us to create.
+                </p>
+
+
+                <form id="appointmentForm">
+
+
+                    <div class="form-row">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Full Name
+                            </label>
+
+                            <input type="text" id="name" placeholder="Your full name" required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Phone Number
+                            </label>
+
+                            <input type="tel" id="phone" placeholder="Your phone number" required>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-row">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Service
+                            </label>
+
+                            <select id="service" required>
+
+                                <option value="">
+                                    Select a service
+                                </option>
+
+                                <option>
+                                    Custom Tailoring
+                                </option>
+
+                                <option>
+                                    Men's Wear
+                                </option>
+
+                                <option>
+                                    Women's Wear
+                                </option>
+
+                                <option>
+                                    Native Wear
+                                </option>
+
+                                <option>
+                                    Clothing Alterations
+                                </option>
+
+                                <option>
+                                    Special Design
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Preferred Date
+                            </label>
+
+                            <input type="date" id="date" required>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Your Message
+                        </label>
+
+                        <textarea id="message" placeholder="Tell us about the outfit you want..."></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="submit-btn">
+                        Send Appointment Request
+                    </button>
+
+
+                    <div class="success-message" id="successMessage">
+                        ✓ Your appointment request has been prepared.
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     CTA
+========================= -->
+
+    <section class="cta">
+
+        <h2>
+            Your Style. Your Idea. Your Outfit.
+        </h2>
+
+        <p>
+            Creative Concept — tailoring creativity into every stitch.
+        </p>
+
+        <a href="gallery.html">
+            Explore Our Designs →
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+
+        <h2>
+            Creative Concept
+        </h2>
+
+        <p>
+            Tailoring creativity into every stitch.
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Creative Concept. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const form =
+            document.getElementById("appointmentForm");
+
+        const success =
+            document.getElementById("successMessage");
+
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value;
+
+                const phone =
+                    document.getElementById("phone").value;
+
+                const service =
+                    document.getElementById("service").value;
+
+                const date =
+                    document.getElementById("date").value;
+
+                const message =
+                    document.getElementById("message").value;
+
+
+                const whatsappNumber =
+                    "2347057953819";
+
+
+                const text =
+                    "Hello Creative Concept!%0A%0A" +
+
+                    "Appointment Request%0A" +
+
+                    "Name: " + encodeURIComponent(name) + "%0A" +
+
+                    "Phone: " + encodeURIComponent(phone) + "%0A" +
+
+                    "Service: " + encodeURIComponent(service) + "%0A" +
+
+                    "Date: " + encodeURIComponent(date) + "%0A" +
+
+                    "Message: " + encodeURIComponent(message);
+
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    text;
+
+
+                success.style.display = "block";
+
+
+                setTimeout(function () {
+
+                    window.open(
+                        whatsappURL,
+                        "_blank"
+                    );
+
+                }, 500);
+
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>

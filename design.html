@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Designs | Creative Concept</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f3fbff;
+            color: #173f55;
+        }
+
+
+        /* =========================
+   HEADER
+========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            background: rgba(255, 255, 255, .97);
+
+            z-index: 1000;
+
+            box-shadow:
+                0 3px 18px rgba(0, 140, 200, .12);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 15px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(135deg,
+                    #00aef0,
+                    #75ddff);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 21px;
+        }
+
+        .logo h2 {
+            color: #009bd7;
+            font-size: 20px;
+        }
+
+        .logo span {
+            display: block;
+            color: #718894;
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 23px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #23465a;
+            font-size: 14px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00aef0;
+        }
+
+
+        /* =========================
+   HERO
+========================= */
+
+        .hero {
+
+            padding: 160px 25px 75px;
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(circle at 10% 20%,
+                    #b8efff,
+                    transparent 28%),
+
+                radial-gradient(circle at 90% 80%,
+                    #c8f5ff,
+                    transparent 25%),
+
+                linear-gradient(135deg,
+                    #e6faff,
+                    white);
+        }
+
+        .hero small {
+            color: #00aef0;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            margin: 15px 0;
+
+            font-size:
+                clamp(40px, 6vw, 65px);
+
+            color: #123d54;
+        }
+
+        .hero h1 span {
+            color: #00aef0;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #647f8c;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+   CATEGORY BUTTONS
+========================= */
+
+        .categories {
+
+            padding: 35px 20px;
+
+            background: white;
+
+            position: sticky;
+
+            top: 73px;
+
+            z-index: 900;
+
+            box-shadow:
+                0 5px 20px rgba(0, 150, 210, .07);
+        }
+
+        .category-list {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+
+            border: none;
+
+            padding: 11px 20px;
+
+            border-radius: 30px;
+
+            background: #e8f9ff;
+
+            color: #008fc9;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+
+            background: #00aef0;
+
+            color: white;
+
+            box-shadow:
+                0 7px 18px rgba(0, 174, 240, .2);
+        }
+
+
+        /* =========================
+   DESIGNS
+========================= */
+
+        .design-section {
+
+            padding: 70px 25px;
+
+            background: #f8fdff;
+        }
+
+        .design-grid {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .design-card {
+
+            background: white;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            border: 1px solid #d9f4ff;
+
+            box-shadow:
+                0 10px 30px rgba(0, 150, 210, .08);
+
+            transition: .4s;
+        }
+
+        .design-card:hover {
+
+            transform: translateY(-9px);
+
+            box-shadow:
+                0 20px 40px rgba(0, 150, 210, .17);
+        }
+
+        .design-image {
+
+            height: 390px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            cursor: pointer;
+        }
+
+        .design-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: .5s;
+        }
+
+        .design-card:hover img {
+
+            transform: scale(1.08);
+        }
+
+        .design-tag {
+
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            padding: 8px 14px;
+
+            border-radius: 20px;
+
+            background: white;
+
+            color: #008fc9;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, .08);
+        }
+
+        .design-info {
+
+            padding: 22px;
+        }
+
+        .design-info h3 {
+
+            color: #16455c;
+
+            margin-bottom: 8px;
+
+            font-size: 20px;
+        }
+
+        .design-info p {
+
+            color: #718691;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+        .design-info a {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            text-decoration: none;
+
+            color: #00aef0;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+   NO RESULT
+========================= */
+
+        .no-result {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 50px;
+
+            color: #718691;
+        }
+
+
+        /* =========================
+   CTA
+========================= */
+
+        .cta {
+
+            max-width: 1050px;
+
+            margin: 70px auto;
+
+            padding: 60px 25px;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(135deg,
+                    #00aef0,
+                    #73dcff);
+
+            color: white;
+
+            box-shadow:
+                0 20px 40px rgba(0, 174, 240, .18);
+        }
+
+        .cta h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+
+            margin-bottom: 25px;
+        }
+
+        .cta a {
+
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            background: white;
+
+            color: #008fc9;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+   FOOTER
+========================= */
+
+        footer {
+
+            background: #07384e;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+
+            color: #7ce0ff;
+
+            margin-bottom: 8px;
+        }
+
+        footer p {
+
+            color: #b8d4df;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+   MOBILE
+========================= */
+
+        @media(max-width:850px) {
+
+            .design-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            .navbar {
+
+                padding: 12px 15px;
+            }
+
+            nav {
+
+                gap: 8px;
+            }
+
+            nav a {
+
+                font-size: 10px;
+            }
+
+            .hero {
+
+                padding-top: 135px;
+            }
+
+            .hero h1 {
+
+                font-size: 42px;
+            }
+
+            .categories {
+
+                top: 67px;
+
+                padding: 20px 10px;
+            }
+
+            .category-list {
+
+                gap: 7px;
+            }
+
+            .category-btn {
+
+                padding: 9px 12px;
+
+                font-size: 11px;
+            }
+
+            .design-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .design-image {
+
+                height: 420px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+     HEADER
+========================= -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    ✂
+                </div>
+
+                <div>
+
+                    <h2>
+                        Creative Concept
+                    </h2>
+
+                    <span>
+                        TAILORING & FASHION
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="design.html" class="active">
+                    Designs
+                </a>
+
+                <a href="service.html">
+                    Services
+                </a>
+
+                <a href="gallery.html">
+                    Gallery
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+     HERO
+========================= -->
+
+    <section class="hero">
+
+        <small>
+            ✦ OUR FASHION COLLECTION
+        </small>
+
+        <h1>
+            Explore Our <span>Designs</span>
+        </h1>
+
+        <p>
+            Discover creative fashion ideas designed,
+            cut and crafted by Creative Concept.
+            Choose a category and explore our collection.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+     CATEGORIES
+========================= -->
+
+    <section class="categories">
+
+        <div class="category-list">
+
+            <button class="category-btn active" onclick="filterDesigns('all',this)">
+                All
+            </button>
+
+            <button class="category-btn" onclick="filterDesigns('men',this)">
+                Men's Wear
+            </button>
+
+            <button class="category-btn" onclick="filterDesigns('women',this)">
+                Women's Wear
+            </button>
+
+            <button class="category-btn" onclick="filterDesigns('native',this)">
+                Native Wear
+            </button>
+
+            <button class="category-btn" onclick="filterDesigns('corporate',this)">
+                Corporate
+            </button>
+
+            <button class="category-btn" onclick="filterDesigns('special',this)">
+                Special Occasion
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     DESIGN COLLECTION
+========================= -->
+
+    <section class="design-section">
+
+        <div class="design-grid">
+
+
+            <!-- DESIGN 1 -->
+
+            <div class="design-card" data-category="men">
+
+                <div class="design-image" onclick="openImage('./images/fashion7.jpg')">
+
+                    <img src="./images/fashion7.jpg" alt="Men's fashion design">
+
+                    <div class="design-tag">
+                        MEN'S WEAR
+                    </div>
+
+                </div>
+
+                <div class="design-info">
+
+                    <h3>
+                        Classic Men's Style
+                    </h3>
+
+                    <p>
+                        Clean tailoring with a modern
+                        and confident appearance.
+                    </p>
+
+                    <a href="contact.html">
+                        Request This Style →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESIGN 2 -->
+
+            <div class="design-card" data-category="women">
+
+                <div class="design-image" onclick="openImage('./images/fashion13.jpg')">
+
+                    <img src="./images/fashion13.jpg" alt="Women's fashion design">
+
+                    <div class="design-tag">
+                        WOMEN'S WEAR
+                    </div>
+
+                </div>
+
+                <div class="design-info">
+
+                    <h3>
+                        Elegant Women's Style
+                    </h3>
+
+                    <p>
+                        Creative fashion designed for
+                        beauty, comfort and confidence.
+                    </p>
+
+                    <a href="contact.html">
+                        Request This Style →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESIGN 3 -->
+
+            <div class="design-card" data-category="native">
+
+                <div class="design-image" onclick="openImage('./images/fashion8.jpg')">
+
+                    <img src="./images/fashion8.jpg" alt="Native fashion">
+
+                    <div class="design-tag">
+                        NATIVE WEAR
+                    </div>
+
+                </div>
+
+                <div class="design-info">
+
+                    <h3>
+                        Modern Native Wear
+                    </h3>
+
+                    <p>
+                        Traditional fashion combined
+                        with modern creative styling.
+                    </p>
+
+                    <a href="contact.html">
+                        Request This Style →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESIGN 4 -->
+
+            <div class="design-card" data-category="corporate">
+
+                <div class="design-image" onclick="openImage('./images/fashion9.jpg')">
+
+                    <img src="./images/fashion9.jpg" alt="Corporate fashion">
+
+                    <div class="design-tag">
+                        CORPORATE
+                    </div>
+
+                </div>
+
+                <div class="design-info">
+
+                    <h3>
+                        Corporate Elegance
+                    </h3>
+
+                    <p>
+                        Smart and professional fashion
+                        for work and important occasions.
+                    </p>
+
+                    <a href="contact.html">
+                        Request This Style →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESIGN 5 -->
+
+            <div class="design-card" data-category="special">
+
+                <div class="design-image" onclick="openImage('./images/fashion10.jpg')">
+
+                    <img src="./images/fashion10.jpg" alt="Special occasion design">
+
+                    <div class="design-tag">
+                        SPECIAL
+                    </div>
+
+                </div>
+
+                <div class="design-info">
+
+                    <h3>
+                        Celebration Collection
+                    </h3>
+
+                    <p>
+                        Unique designs created for
+                        birthdays, weddings and events.
+                    </p>
+
+                    <a href="contact.html">
+                        Request This Style →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESIGN 6 -->
+
+            <div class="design-card" data-category="native">
+
+                <div class="design-image" onclick="openImage('./images/fashion11.jpg')">
+
+                    <img src="./images/fashion11.jpg" alt="Native fashion design">
+
+                    <div class="design-tag">
+                        NATIVE
+                    </div>
+
+                </div>
+
+                <div class="design-info">
+
+                    <h3>
+                        Premium Native Collection
+                    </h3>
+
+                    <p>
+                        Beautiful traditional-inspired
+                        styles with premium finishing.
+                    </p>
+
+                    <a href="contact.html">
+                        Request This Style →
+                    </a>
+                    <br>
+                    <!-- DESIGN 14 -->
+
+                    <div class="design-card" data-category="Unoform">
+
+                        <div class="design-image" onclick="openImage('./images/fashion14.jpg')">
+
+                            <img src="./images/fashion14.jpg" alt="School Uniform">
+
+                            <div class="design-tag">
+                                School Uniform
+                            </div>
+
+                        </div>
+
+                        <div class="design-info">
+
+                            <h3>
+                                School Uniform Style
+                            </h3>
+
+                            <p>
+                                Creative fashion designed for
+                                beauty, comfort and confidence.
+                            </p>
+
+                            <a href="contact.html">
+                                Request This Style →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="no-result" id="noResult">
+
+            No designs found in this category yet.
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     CTA
+========================= -->
+
+    <section class="cta">
+
+        <h2>
+            Have Your Own Design Idea?
+        </h2>
+
+        <p>
+            Bring your idea and let Creative Concept
+            turn it into a beautiful outfit.
+        </p>
+
+        <a href="contact.html">
+            Start Your Design →
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+
+        <h2>
+            Creative Concept
+        </h2>
+
+        <p>
+            Tailoring creativity into every stitch.
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Creative Concept. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+     IMAGE VIEWER
+========================= -->
+
+    <div id="lightbox" style="
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,25,40,.93);
+z-index:3000;
+align-items:center;
+justify-content:center;
+padding:20px;
+" onclick="closeImage()">
+
+        <button onclick="closeImage()" style="
+position:absolute;
+top:20px;
+right:25px;
+width:45px;
+height:45px;
+border:none;
+border-radius:50%;
+background:white;
+color:#008fc9;
+font-size:25px;
+cursor:pointer;
+">
+            ×
+        </button>
+
+        <img id="largeImage" src="" alt="Fashion design preview" style="
+max-width:90%;
+max-height:85vh;
+border-radius:18px;
+object-fit:contain;
+" onclick="event.stopPropagation()">
+
+    </div>
+
+
+    <script>
+
+        /* =========================
+           FILTER DESIGNS
+        ========================= */
+
+        function filterDesigns(category, button) {
+
+            const cards =
+                document.querySelectorAll(".design-card");
+
+            const buttons =
+                document.querySelectorAll(".category-btn");
+
+            const noResult =
+                document.getElementById("noResult");
+
+            let visible = 0;
+
+
+            buttons.forEach(function (btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+
+            cards.forEach(function (card) {
+
+                const cardCategory =
+                    card.getAttribute("data-category");
+
+
+                if (
+                    category === "all" ||
+                    cardCategory === category
+                ) {
+
+                    card.style.display = "block";
+
+                    visible++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            if (visible === 0) {
+
+                noResult.style.display = "block";
+
+            } else {
+
+                noResult.style.display = "none";
+
+            }
+
+        }
+
+
+        /* =========================
+           IMAGE VIEWER
+        ========================= */
+
+        function openImage(image) {
+
+            document.getElementById(
+                "largeImage"
+            ).src = image;
+
+
+            document.getElementById(
+                "lightbox"
+            ).style.display = "flex";
+
+        }
+
+
+        function closeImage() {
+
+            document.getElementById(
+                "lightbox"
+            ).style.display = "none";
+
+        }
+
+
+        /* ESC KEY */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    closeImage();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

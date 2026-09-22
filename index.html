@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creative Concept | Tailoring & Fashion</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4fcff;
+            color: #173f55;
+        }
+
+
+        /* =========================
+   HEADER
+========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            background: rgba(255, 255, 255, .96);
+
+            backdrop-filter: blur(12px);
+
+            z-index: 1000;
+
+            box-shadow:
+                0 3px 20px rgba(0, 140, 200, .12);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 14px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(135deg,
+                    #00aef0,
+                    #75ddff);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            font-size: 22px;
+
+            box-shadow:
+                0 8px 20px rgba(0, 174, 240, .2);
+        }
+
+        .logo h2 {
+            color: #009bd7;
+            font-size: 20px;
+        }
+
+        .logo span {
+            display: block;
+
+            color: #718894;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+        }
+
+        nav a {
+            text-decoration: none;
+
+            color: #23465a;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #00aef0;
+        }
+
+
+        /* MOBILE MENU BUTTON */
+
+        .menu-btn {
+            display: none;
+
+            border: none;
+
+            background: #e8f9ff;
+
+            color: #008fc9;
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 12px;
+
+            font-size: 22px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+   HERO
+========================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            padding: 150px 25px 80px;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(circle at 85% 25%,
+                    #9ce8ff,
+                    transparent 25%),
+
+                radial-gradient(circle at 10% 80%,
+                    #c7f5ff,
+                    transparent 30%),
+
+                linear-gradient(135deg,
+                    #e4faff,
+                    #ffffff);
+        }
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border: 2px solid rgba(0, 174, 240, .08);
+
+            border-radius: 50%;
+
+            right: -100px;
+            top: -80px;
+        }
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 200px;
+            height: 200px;
+
+            border: 2px solid rgba(0, 174, 240, .08);
+
+            border-radius: 50%;
+
+            left: -70px;
+            bottom: -50px;
+        }
+
+        .hero-container {
+
+            max-width: 1150px;
+
+            width: 100%;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.05fr .95fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .hero-text small {
+
+            color: #00aef0;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+        }
+
+        .hero-text h1 {
+
+            margin: 18px 0;
+
+            font-size:
+                clamp(45px, 7vw, 78px);
+
+            line-height: 1.02;
+
+            color: #123d54;
+        }
+
+        .hero-text h1 span {
+
+            color: #00aef0;
+        }
+
+        .hero-text p {
+
+            max-width: 600px;
+
+            color: #647f8c;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+
+            display: inline-block;
+
+            padding: 14px 23px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            transition: .3s;
+        }
+
+        .btn-primary {
+
+            background: #00aef0;
+
+            color: white;
+
+            box-shadow:
+                0 10px 25px rgba(0, 174, 240, .22);
+        }
+
+        .btn-primary:hover {
+
+            transform: translateY(-4px);
+        }
+
+        .btn-secondary {
+
+            background: white;
+
+            color: #008fc9;
+
+            border: 1px solid #cceefa;
+        }
+
+        .btn-secondary:hover {
+
+            transform: translateY(-4px);
+
+            background: #effbff;
+        }
+
+
+        /* HERO VISUAL */
+
+        .hero-visual {
+
+            min-height: 500px;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .hero-circle {
+
+            width: 390px;
+            height: 390px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(145deg,
+                    #82ddff,
+                    #dff9ff);
+
+            box-shadow:
+                0 30px 70px rgba(0, 174, 240, .15);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 150px;
+
+            position: relative;
+        }
+
+        .hero-circle::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 320px;
+            height: 320px;
+
+            border: 2px dashed rgba(0, 150, 210, .18);
+
+            border-radius: 50%;
+        }
+
+        .floating-card {
+
+            position: absolute;
+
+            background: white;
+
+            padding: 15px 18px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 35px rgba(0, 120, 170, .14);
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            color: #315b6e;
+
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card-one {
+
+            top: 65px;
+            right: 10px;
+        }
+
+        .card-two {
+
+            bottom: 75px;
+            left: 0;
+        }
+
+        .card-three {
+
+            bottom: 20px;
+            right: 30px;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+
+        /* =========================
+   INTRO
+========================= */
+
+        .intro {
+
+            padding: 85px 25px;
+
+            background: white;
+
+            text-align: center;
+        }
+
+        .intro-container {
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .intro small {
+
+            color: #00aef0;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .intro h2 {
+
+            font-size: 38px;
+
+            color: #153e53;
+
+            margin: 12px 0 15px;
+        }
+
+        .intro h2 span {
+
+            color: #00aef0;
+        }
+
+        .intro p {
+
+            color: #718691;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+   SERVICES
+========================= */
+
+        .services {
+
+            padding: 85px 25px;
+
+            background: #f3fbff;
+        }
+
+        .section-title {
+
+            max-width: 700px;
+
+            margin: 0 auto 45px;
+
+            text-align: center;
+        }
+
+        .section-title small {
+
+            color: #00aef0;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+
+            font-size: 36px;
+
+            color: #153e53;
+
+            margin: 10px 0;
+        }
+
+        .section-title p {
+
+            color: #718691;
+
+            line-height: 1.6;
+        }
+
+        .service-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .service-card {
+
+            background: white;
+
+            padding: 30px 25px;
+
+            border-radius: 22px;
+
+            border: 1px solid #d9f4ff;
+
+            transition: .4s;
+        }
+
+        .service-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 40px rgba(0, 150, 210, .12);
+        }
+
+        .service-icon {
+
+            width: 62px;
+            height: 62px;
+
+            border-radius: 18px;
+
+            background: #e5f9ff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 28px;
+
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+
+            color: #16455c;
+
+            margin-bottom: 9px;
+        }
+
+        .service-card p {
+
+            color: #718691;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+   FEATURED
+========================= */
+
+        .featured {
+
+            padding: 90px 25px;
+
+            background: white;
+        }
+
+        .featured-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .featured-card {
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            background: #f3fbff;
+
+            border: 1px solid #d9f4ff;
+
+            transition: .4s;
+        }
+
+        .featured-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 40px rgba(0, 150, 210, .13);
+        }
+
+        .featured-image {
+
+            height: 370px;
+
+            overflow: hidden;
+        }
+
+        .featured-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: .5s;
+        }
+
+        .featured-card:hover img {
+
+            transform: scale(1.07);
+        }
+
+        .featured-info {
+
+            padding: 20px;
+        }
+
+        .featured-info h3 {
+
+            color: #16455c;
+
+            margin-bottom: 7px;
+        }
+
+        .featured-info p {
+
+            color: #718691;
+
+            font-size: 13px;
+        }
+
+        .view-all {
+
+            text-align: center;
+
+            margin-top: 35px;
+        }
+
+
+        /* =========================
+   WHY US
+========================= */
+
+        .why {
+
+            padding: 90px 25px;
+
+            background:
+
+                linear-gradient(135deg,
+                    #e5faff,
+                    #ffffff);
+        }
+
+        .why-grid {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .why-card {
+
+            text-align: center;
+
+            padding: 25px 15px;
+        }
+
+        .why-icon {
+
+            width: 68px;
+            height: 68px;
+
+            margin: 0 auto 15px;
+
+            border-radius: 50%;
+
+            background: #00aef0;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 26px;
+
+            box-shadow:
+                0 10px 25px rgba(0, 174, 240, .2);
+        }
+
+        .why-card h3 {
+
+            color: #16455c;
+
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+
+            color: #718691;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+   CTA
+========================= */
+
+        .cta {
+
+            max-width: 1100px;
+
+            margin: 70px auto;
+
+            padding: 65px 25px;
+
+            border-radius: 32px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(135deg,
+                    #00aef0,
+                    #73dcff);
+
+            color: white;
+
+            box-shadow:
+                0 25px 50px rgba(0, 174, 240, .18);
+        }
+
+        .cta h2 {
+
+            font-size: 38px;
+
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+
+            margin-bottom: 25px;
+
+            opacity: .95;
+        }
+
+        .cta a {
+
+            display: inline-block;
+
+            padding: 14px 27px;
+
+            border-radius: 30px;
+
+            background: white;
+
+            color: #008fc9;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+   FOOTER
+========================= */
+
+        footer {
+
+            background: #07384e;
+
+            color: white;
+
+            padding: 45px 20px;
+
+            text-align: center;
+        }
+
+        footer h2 {
+
+            color: #7ce0ff;
+
+            margin-bottom: 10px;
+        }
+
+        footer p {
+
+            color: #b8d4df;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+        .footer-links {
+
+            margin: 20px 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+
+            color: #d8f6ff;
+
+            text-decoration: none;
+
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+
+            color: #72dcff;
+        }
+
+
+        /* =========================
+   MOBILE
+========================= */
+
+        @media(max-width:850px) {
+
+            nav {
+                display: none;
+
+                position: absolute;
+
+                top: 72px;
+
+                left: 10px;
+                right: 10px;
+
+                background: white;
+
+                padding: 18px;
+
+                border-radius: 18px;
+
+                box-shadow:
+                    0 15px 35px rgba(0, 100, 150, .15);
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero-text p {
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+
+                justify-content: center;
+            }
+
+            .hero-visual {
+
+                min-height: 420px;
+            }
+
+            .hero-circle {
+
+                width: 320px;
+                height: 320px;
+
+                font-size: 110px;
+            }
+
+            .service-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .featured-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .why-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            .navbar {
+
+                padding: 12px 15px;
+            }
+
+            .logo h2 {
+
+                font-size: 17px;
+            }
+
+            .hero {
+
+                padding-top: 125px;
+            }
+
+            .hero-text h1 {
+
+                font-size: 43px;
+            }
+
+            .hero-visual {
+
+                min-height: 350px;
+            }
+
+            .hero-circle {
+
+                width: 270px;
+                height: 270px;
+
+                font-size: 90px;
+            }
+
+            .hero-circle::before {
+
+                width: 220px;
+                height: 220px;
+            }
+
+            .floating-card {
+
+                font-size: 10px;
+
+                padding: 10px 12px;
+            }
+
+            .card-one {
+
+                right: 0;
+                top: 30px;
+            }
+
+            .card-two {
+
+                left: 0;
+                bottom: 45px;
+            }
+
+            .card-three {
+
+                right: 0;
+                bottom: 0;
+            }
+
+            .service-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .featured-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+
+                height: 400px;
+            }
+
+            .why-grid {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cta {
+
+                margin: 50px 15px;
+
+            }
+
+            .cta h2 {
+
+                font-size: 29px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+     HEADER
+========================= -->
+
+    <header>
+
+        <div class="navbar">
+
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    ✂
+                </div>
+
+                <div>
+
+                    <h2>
+                        Creative Concept
+                    </h2>
+
+                    <span>
+                        TAILORING & FASHION
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+
+
+            <nav id="mainNav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="design.html">
+                    Designs
+                </a>
+
+                <a href="service.html">
+                    Services
+                </a>
+
+                <a href="gallery.html">
+                    Gallery
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+     HERO
+========================= -->
+
+    <section class="hero">
+
+        <div class="hero-container">
+
+
+            <div class="hero-text">
+
+                <small>
+                    ✦ WELCOME TO CREATIVE CONCEPT
+                </small>
+
+                <h1>
+
+                    Where Ideas Become
+                    <span>Style.</span>
+
+                </h1>
+
+                <p>
+
+                    Creative Concept is a modern tailoring and
+                    fashion brand creating unique outfits from
+                    your ideas, your measurements and your style.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="design.html" class="btn-primary">
+                        Explore Designs →
+                    </a>
+
+                    <a href="contact.html" class="btn-secondary">
+                        Book An Appointment
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <img src="./images/fashion1.jpg" alt="Creative Concept Tailor">
+
+
+                <div class="floating-card card-one">
+                    ✨ Creative Designs
+                </div>
+
+                <div class="floating-card card-two">
+                    🧵 Crafted With Care
+                </div>
+
+                <div class="floating-card card-three">
+                    👗 Your Style
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     INTRO
+========================= -->
+
+    <section class="intro">
+
+        <div class="intro-container">
+
+            <small>
+                THE CREATIVE CONCEPT DIFFERENCE
+            </small>
+
+            <h2>
+                Fashion Made <span>Personal</span>
+            </h2>
+
+            <p>
+
+                We believe great fashion starts with an idea.
+                Whether you have a complete design or only
+                a simple inspiration, we work with you to
+                create an outfit that feels uniquely yours.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     SERVICES
+========================= -->
+
+    <section class="services">
+
+        <div class="section-title">
+
+            <small>
+                WHAT WE DO
+            </small>
+
+            <h2>
+                Our Fashion Services
+            </h2>
+
+            <p>
+                From custom tailoring to special occasion
+                outfits, explore what Creative Concept can create.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ✂️
+                </div>
+
+                <h3>
+                    Custom Tailoring
+                </h3>
+
+                <p>
+                    Outfits designed and crafted around
+                    your measurements and personal style.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    👔
+                </div>
+
+                <h3>
+                    Men's Wear
+                </h3>
+
+                <p>
+                    Modern native, corporate and special
+                    occasion outfits for men.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    👗
+                </div>
+
+                <h3>
+                    Women's Wear
+                </h3>
+
+                <p>
+                    Elegant and creative styles designed
+                    for individual personality.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🥻
+                </div>
+
+                <h3>
+                    Native Wear
+                </h3>
+
+                <p>
+                    Traditional fashion combined with
+                    modern creative styling.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🧵
+                </div>
+
+                <h3>
+                    Alterations
+                </h3>
+
+                <p>
+                    Professional adjustments to help
+                    improve fit and comfort.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Special Designs
+                </h3>
+
+                <p>
+                    Unique outfits created for memorable
+                    events and special occasions.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     FEATURED DESIGNS
+========================= -->
+
+    <section class="featured">
+
+        <div class="section-title">
+
+            <small>
+                OUR COLLECTION
+            </small>
+
+            <h2>
+                Featured Designs
+            </h2>
+
+            <p>
+                A glimpse of the creative styles
+                we can create for you.
+            </p>
+
+        </div>
+
+
+        <div class="featured-grid">
+
+
+            <div class="featured-card">
+
+                <div class="featured-image">
+
+                    <img src="./images/fashion7.jpg" alt="Creative Concept fashion design">
+
+                </div>
+
+                <div class="featured-info">
+
+                    <h3>
+                        Classic Style
+                    </h3>
+
+                    <p>
+                        Elegant tailoring with a modern touch.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="featured-card">
+
+                <div class="featured-image">
+
+                    <img src="./images/fashion3.jpg" alt="Creative Concept fashion">
+
+                </div>
+
+                <div class="featured-info">
+
+                    <h3>
+                        Modern Collection
+                    </h3>
+
+                    <p>
+                        Creative designs made for confident style.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="featured-card">
+
+                <div class="featured-image">
+
+                    <img src="./images/fashion10.jpg" alt="Creative Concept native wear">
+
+                </div>
+
+                <div class="featured-info">
+
+                    <h3>
+                        Native Elegance
+                    </h3>
+
+                    <p>
+                        Traditional inspiration with a modern finish.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="view-all">
+
+            <a href="gallery.html" class="btn-primary">
+                View Full Gallery →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     WHY CREATIVE CONCEPT
+========================= -->
+
+    <section class="why">
+
+        <div class="section-title">
+
+            <small>
+                WHY CHOOSE US
+            </small>
+
+            <h2>
+                Made With Creativity
+            </h2>
+
+            <p>
+                Every piece begins with your idea.
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Creative
+                </h3>
+
+                <p>
+                    Fresh ideas and unique fashion concepts.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    🧵
+                </div>
+
+                <h3>
+                    Detailed
+                </h3>
+
+                <p>
+                    Attention to the small details that matter.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Passionate
+                </h3>
+
+                <p>
+                    We put passion into every creation.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Personal
+                </h3>
+
+                <p>
+                    Your style remains at the center of the process.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     CTA
+========================= -->
+
+    <section class="cta">
+
+        <h2>
+            Have A Fashion Idea?
+        </h2>
+
+        <p>
+            Bring your idea. We'll help turn it into something you can wear.
+        </p>
+
+        <a href="contact.html">
+            Start Your Design →
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+
+        <h2>
+            Creative Concept
+        </h2>
+
+        <p>
+            Tailoring creativity into every stitch.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="design.html">
+                Designs
+            </a>
+
+            <a href="service.html">
+                Services
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <p>
+            © 2026 Creative Concept. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function toggleMenu() {
+
+            const nav =
+                document.getElementById("mainNav");
+
+            nav.classList.toggle("show");
+
+        }
+
+
+        /* Close mobile menu after clicking a link */
+
+        document
+            .querySelectorAll("#mainNav a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        document
+                            .getElementById("mainNav")
+                            .classList.remove("show");
+
+                    }
+                );
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>

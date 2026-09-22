@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery | Creative Concept</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4fcff;
+            color: #173f55;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            z-index: 1000;
+            box-shadow: 0 3px 18px rgba(0, 140, 200, 0.12);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+
+            background: linear-gradient(135deg,
+                    #00aef0,
+                    #75ddff);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 21px;
+        }
+
+        .logo h2 {
+            color: #009bd7;
+            font-size: 20px;
+        }
+
+        .logo span {
+            display: block;
+            color: #718894;
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 23px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #23465a;
+            font-size: 14px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00aef0;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .gallery-hero {
+            padding: 160px 25px 80px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(circle at 90% 20%,
+                    #a9eaff,
+                    transparent 30%),
+                linear-gradient(135deg,
+                    #e5faff,
+                    white);
+        }
+
+        .gallery-hero small {
+            color: #00aef0;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .gallery-hero h1 {
+            margin: 15px 0;
+
+            font-size: clamp(40px, 6vw, 65px);
+
+            color: #123d54;
+        }
+
+        .gallery-hero h1 span {
+            color: #00aef0;
+        }
+
+        .gallery-hero p {
+            max-width: 650px;
+            margin: auto;
+
+            color: #647f8c;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            padding: 80px 25px;
+            background: white;
+        }
+
+        .gallery-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background: #f4fcff;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            border: 1px solid #d9f4ff;
+
+            box-shadow:
+                0 10px 30px rgba(0, 150, 210, .08);
+
+            transition: .4s;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 40px rgba(0, 150, 210, .17);
+        }
+
+        .gallery-image {
+            height: 380px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            cursor: pointer;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: .5s;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .image-label {
+            position: absolute;
+
+            left: 15px;
+            bottom: 15px;
+
+            background: white;
+
+            color: #008fc9;
+
+            padding: 9px 15px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+        .gallery-info {
+            padding: 20px;
+        }
+
+        .gallery-info h3 {
+            color: #16455c;
+            margin-bottom: 7px;
+        }
+
+        .gallery-info p {
+            color: #718691;
+            font-size: 13px;
+        }
+
+        /* =========================
+           LIGHTBOX
+        ========================= */
+
+        .lightbox {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0, 30, 45, .92);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            z-index: 2000;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, .4);
+        }
+
+        .close-lightbox {
+            position: absolute;
+
+            top: 25px;
+            right: 30px;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: white;
+
+            color: #008fc9;
+
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            max-width: 1050px;
+
+            margin: 70px auto;
+
+            padding: 60px 25px;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(135deg,
+                    #00aef0,
+                    #73dcff);
+
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+        }
+
+        .cta a {
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            background: white;
+
+            color: #008fc9;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #07384e;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            color: #7ce0ff;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #b8d4df;
+            font-size: 13px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:850px) {
+
+            .gallery-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            .navbar {
+                padding: 12px 15px;
+            }
+
+            nav {
+                gap: 8px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .gallery-hero {
+                padding-top: 135px;
+            }
+
+            .gallery-hero h1 {
+                font-size: 42px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-image {
+                height: 400px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    ✂
+                </div>
+
+                <div>
+                    <h2>Creative Concept</h2>
+                    <span>TAILORING & FASHION</span>
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="design.html">
+                    Designs
+                </a>
+
+                <a href="service.html">
+                    Services
+                </a>
+
+                <a href="gallery.html" class="active">
+                    Gallery
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="gallery-hero">
+
+        <small>
+            ✦ CREATIVE CONCEPT COLLECTION
+        </small>
+
+        <h1>
+            Our <span>Gallery</span>
+        </h1>
+
+        <p>
+            Take a look at some of our fashion creations,
+            tailoring ideas and carefully crafted styles.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================= -->
+
+    <section class="gallery">
+
+        <div class="gallery-grid">
+
+
+            <!-- IMAGE 1 -->
+
+            <div class="gallery-card">
+
+                <div class="gallery-image" onclick="openImage('./fashion1.jpg')">
+
+                    <img src="./images/fashion4.jpg" alt="Creative Concept Fashion">
+
+                    <div class="image-label">
+                        Classic Style
+                    </div>
+
+                </div>
+
+                <div class="gallery-info">
+
+                    <h3>
+                        Classic Elegance
+                    </h3>
+
+                    <p>
+                        Creative Concept Collection
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 2 -->
+
+            <div class="gallery-card">
+
+                <div class="gallery-image" onclick="openImage('./fashion2.jpg')">
+
+                    <img src="./images/fashion2.jpg" alt="Creative Concept Design">
+
+                    <div class="image-label">
+                        Modern Style
+                    </div>
+
+                </div>
+
+                <div class="gallery-info">
+
+                    <h3>
+                        Modern Fashion
+                    </h3>
+
+                    <p>
+                        Creative Concept Collection
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 3 -->
+
+            <div class="gallery-card">
+
+                <div class="gallery-image" onclick="openImage('./fashion3.jpg')">
+
+                    <img src="./images/fashion3.jpg" alt="Creative Concept Tailoring">
+
+                    <div class="image-label">
+                        Premium
+                    </div>
+
+                </div>
+
+                <div class="gallery-info">
+
+                    <h3>
+                        Premium Tailoring
+                    </h3>
+
+                    <p>
+                        Creative Concept Collection
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 4 -->
+
+            <div class="gallery-card">
+
+                <div class="gallery-image">
+
+                    <img src="./images/fashion1.jpg" alt="Native Wear">
+
+                    <div class="image-label">
+                        Native Wear
+                    </div>
+
+                </div>
+
+                <div class="gallery-info">
+
+                    <h3>
+                        Native Collection
+                    </h3>
+
+                    <p>
+                        Traditional style with a creative touch
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 5 -->
+
+            <div class="gallery-card">
+
+                <div class="gallery-image">
+
+                    <img src="./images/fashion5.jpg" alt="Custom Design">
+
+                    <div class="image-label">
+                        Custom
+                    </div>
+
+                </div>
+
+                <div class="gallery-info">
+
+                    <h3>
+                        Custom Design
+                    </h3>
+
+                    <p>
+                        Designed around your personality
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMAGE 6 -->
+
+            <div class="gallery-card">
+
+                <div class="gallery-image">
+
+                    <img src="./images/fashion6.jpg" alt="Special Occasion">
+
+                    <div class="image-label">
+                        Special
+                    </div>
+
+                </div>
+
+                <div class="gallery-info">
+
+                    <h3>
+                        Special Occasion
+                    </h3>
+
+                    <p>
+                        Fashion created for memorable moments
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================= -->
+
+    <section class="cta">
+
+        <h2>
+            Love What You See?
+        </h2>
+
+        <p>
+            Let's create a style specially for you.
+        </p>
+
+        <a href="contact.html">
+            Start Your Design →
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         LIGHTBOX
+    ========================= -->
+
+    <div class="lightbox" id="lightbox" onclick="closeImage()">
+
+        <button class="close-lightbox" onclick="closeImage()">
+            ×
+        </button>
+
+        <img id="lightboxImage" src="" alt="Large fashion preview" onclick="event.stopPropagation()">
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h2>
+            Creative Concept
+        </h2>
+
+        <p>
+            Tailoring creativity into every stitch.
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Creative Concept. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function openImage(image) {
+
+            document.getElementById("lightboxImage").src = image;
+
+            document
+                .getElementById("lightbox")
+                .classList.add("active");
+
+        }
+
+
+        function closeImage() {
+
+            document
+                .getElementById("lightbox")
+                .classList.remove("active");
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    closeImage();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

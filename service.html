@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services | Creative Concept</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4fcff;
+            color: #173f55;
+        }
+
+        /* =========================
+   HEADER
+========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, .97);
+            z-index: 1000;
+            box-shadow: 0 3px 18px rgba(0, 140, 200, .12);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+
+            background: linear-gradient(135deg,
+                    #00aef0,
+                    #75ddff);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 21px;
+        }
+
+        .logo h2 {
+            color: #009bd7;
+            font-size: 20px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 8px;
+            letter-spacing: 2px;
+            color: #718894;
+        }
+
+        nav {
+            display: flex;
+            gap: 23px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #23465a;
+            font-size: 14px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00aef0;
+        }
+
+
+        /* =========================
+   HERO
+========================= */
+
+        .services-hero {
+            padding: 160px 25px 80px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(circle at 10% 20%,
+                    #b6efff,
+                    transparent 28%),
+                linear-gradient(135deg,
+                    #e5faff,
+                    white);
+        }
+
+        .services-hero small {
+            color: #00aef0;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .services-hero h1 {
+            margin: 15px 0;
+
+            font-size: clamp(40px, 6vw, 65px);
+
+            color: #123d54;
+        }
+
+        .services-hero h1 span {
+            color: #00aef0;
+        }
+
+        .services-hero p {
+            max-width: 650px;
+            margin: auto;
+
+            color: #647f8c;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+   SERVICES
+========================= */
+
+        .services {
+            padding: 85px 25px;
+            background: white;
+        }
+
+        .section-title {
+            max-width: 650px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-title small {
+            color: #00aef0;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #153e53;
+            margin: 10px 0;
+        }
+
+        .section-title p {
+            color: #718691;
+            line-height: 1.6;
+        }
+
+
+        /* SERVICE GRID */
+
+        .service-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* CARD */
+
+        .service-card {
+            position: relative;
+
+            padding: 35px 28px;
+
+            border-radius: 25px;
+
+            background: #f2fbff;
+
+            border: 1px solid #d9f4ff;
+
+            overflow: hidden;
+
+            transition: .4s;
+        }
+
+        .service-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            border-radius: 50%;
+
+            background: #d5f6ff;
+
+            top: -45px;
+            right: -35px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 40px rgba(0, 150, 210, .15);
+        }
+
+        .service-icon {
+            position: relative;
+
+            width: 70px;
+            height: 70px;
+
+            border-radius: 20px;
+
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 32px;
+
+            margin-bottom: 22px;
+
+            box-shadow:
+                0 8px 20px rgba(0, 150, 210, .10);
+        }
+
+        .service-card h3 {
+            color: #16455c;
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #718691;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+
+        /* NUMBER */
+
+        .service-number {
+            position: absolute;
+
+            right: 22px;
+            bottom: 18px;
+
+            font-size: 45px;
+
+            font-weight: bold;
+
+            color: #dff7ff;
+        }
+
+
+        /* =========================
+   PROCESS
+========================= */
+
+        .process {
+            padding: 85px 25px;
+
+            background:
+                linear-gradient(135deg,
+                    #e9faff,
+                    #ffffff);
+        }
+
+        .process-grid {
+            max-width: 1050px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .process-card {
+            text-align: center;
+        }
+
+        .process-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 50%;
+
+            background: #00aef0;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+
+            box-shadow:
+                0 10px 25px rgba(0, 174, 240, .25);
+        }
+
+        .process-card h3 {
+            color: #16455c;
+            margin-bottom: 8px;
+        }
+
+        .process-card p {
+            color: #718691;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+   CTA
+========================= */
+
+        .cta {
+            max-width: 1050px;
+
+            margin: 70px auto;
+
+            padding: 60px 25px;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(135deg,
+                    #00aef0,
+                    #73dcff);
+
+            color: white;
+
+            box-shadow:
+                0 20px 40px rgba(0, 174, 240, .2);
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+        }
+
+        .cta a {
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            background: white;
+
+            color: #008fc9;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+   FOOTER
+========================= */
+
+        footer {
+            background: #07384e;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            color: #7ce0ff;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #b8d4df;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+   MOBILE
+========================= */
+
+        @media(max-width:850px) {
+
+            .service-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+                row-gap: 40px;
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            .navbar {
+                padding: 12px 15px;
+            }
+
+            nav {
+                gap: 9px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .services-hero {
+                padding-top: 135px;
+            }
+
+            .services-hero h1 {
+                font-size: 42px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+     HEADER
+========================= -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    ✂
+                </div>
+
+                <div>
+
+                    <h2>Creative Concept</h2>
+
+                    <span>
+                        TAILORING & FASHION
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="design.html">
+                    Designs
+                </a>
+
+                <a href="service.html" class="active">
+                    Services
+                </a>
+
+                <a href="gallery.html">
+                    Gallery
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+     HERO
+========================= -->
+
+    <section class="services-hero">
+
+        <small>
+            ✦ WHAT WE OFFER
+        </small>
+
+        <h1>
+            Our <span>Services</span>
+        </h1>
+
+        <p>
+            From the first idea to the final stitch,
+            Creative Concept provides fashion and tailoring
+            services designed around your style.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+     SERVICES
+========================= -->
+
+    <section class="services">
+
+        <div class="section-title">
+
+            <small>
+                CREATIVE SERVICES
+            </small>
+
+            <h2>
+                What We Can Create For You
+            </h2>
+
+            <p>
+                Choose the service that matches your fashion needs.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <!-- 01 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ✂️
+                </div>
+
+                <h3>
+                    Custom Tailoring
+                </h3>
+
+                <p>
+                    Have an idea for an outfit?
+                    We transform your idea into a carefully
+                    fitted and beautifully finished garment.
+                </p>
+
+                <div class="service-number">
+                    01
+                </div>
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    👔
+                </div>
+
+                <h3>
+                    Men's Wear
+                </h3>
+
+                <p>
+                    Stylish outfits for modern gentlemen,
+                    including native wear, corporate outfits
+                    and special occasion designs.
+                </p>
+
+                <div class="service-number">
+                    02
+                </div>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    👗
+                </div>
+
+                <h3>
+                    Women's Wear
+                </h3>
+
+                <p>
+                    Creative and elegant women's fashion
+                    designed to match your personality
+                    and preferred style.
+                </p>
+
+                <div class="service-number">
+                    03
+                </div>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🥻
+                </div>
+
+                <h3>
+                    Native Wear
+                </h3>
+
+                <p>
+                    Traditional Nigerian fashion combined
+                    with modern creative styling and
+                    beautiful finishing.
+                </p>
+
+                <div class="service-number">
+                    04
+                </div>
+
+            </div>
+
+
+            <!-- 05 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🧵
+                </div>
+
+                <h3>
+                    Clothing Alterations
+                </h3>
+
+                <p>
+                    Need an outfit adjusted?
+                    We can modify clothing for improved
+                    fit, comfort and appearance.
+                </p>
+
+                <div class="service-number">
+                    05
+                </div>
+
+            </div>
+
+
+            <!-- 06 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Special Designs
+                </h3>
+
+                <p>
+                    Unique fashion concepts created
+                    for celebrations, events, ceremonies
+                    and special occasions.
+                </p>
+
+                <div class="service-number">
+                    06
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     OUR PROCESS
+========================= -->
+
+    <section class="process">
+
+        <div class="section-title">
+
+            <small>
+                HOW IT WORKS
+            </small>
+
+            <h2>
+                From Idea To Outfit
+            </h2>
+
+            <p>
+                Our simple process helps turn your fashion
+                idea into a finished outfit.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+
+            <div class="process-card">
+
+                <div class="process-icon">
+                    💡
+                </div>
+
+                <h3>
+                    1. Idea
+                </h3>
+
+                <p>
+                    Tell us about the outfit
+                    you want.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-icon">
+                    📏
+                </div>
+
+                <h3>
+                    2. Measurement
+                </h3>
+
+                <p>
+                    We take the necessary
+                    measurements.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-icon">
+                    🧵
+                </div>
+
+                <h3>
+                    3. Creation
+                </h3>
+
+                <p>
+                    Your fabric is carefully
+                    cut and sewn.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    4. Finish
+                </h3>
+
+                <p>
+                    Your completed outfit is
+                    ready for you.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     CTA
+========================= -->
+
+    <section class="cta">
+
+        <h2>
+            Have A Fashion Idea?
+        </h2>
+
+        <p>
+            Let's create something unique together.
+        </p>
+
+        <a href="contact.html">
+            Book A Consultation →
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+
+        <h2>
+            Creative Concept
+        </h2>
+
+        <p>
+            Tailoring creativity into every stitch.
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Creative Concept. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
